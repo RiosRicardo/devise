@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Directorios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Area</th>
+      <th>Telefono</th>
+      <th>Celular</th>
+      <th>Direccion</th>
+      <th>Comuna</th>
+      <th>Ciudad</th>
+      <th>Region</th>
+      <th>Categoria</th>
+      <th>Subcategoria</th>
+      <th>Estado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @directorios.each do |directorio| %>
+      <tr>
+        <td><%= directorio.user %></td>
+        <td><%= directorio.nombre %></td>
+        <td><%= directorio.descripcion %></td>
+        <td><%= directorio.area %></td>
+        <td><%= directorio.telefono %></td>
+        <td><%= directorio.celular %></td>
+        <td><%= directorio.direccion %></td>
+        <td><%= directorio.comuna %></td>
+        <td><%= directorio.ciudad %></td>
+        <td><%= directorio.region %></td>
+        <td><%= directorio.categoria %></td>
+        <td><%= directorio.subcategoria %></td>
+        <td><%= directorio.estado %></td>
+        <td><%= link_to 'Show', directorio %></td>
+        <td><%= link_to 'Edit', edit_directorio_path(directorio) %></td>
+        <td><%= link_to 'Destroy', directorio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Directorio', new_directorio_path %>
